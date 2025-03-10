@@ -1,0 +1,10 @@
+:host::ng-deep .p-card {
+  width: 80%;
+  font-size: 14px;
+  .p-card-body {
+    padding-top: 0;
+    .p-card-title {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+:host::ng-deep .p-card {
+  min-height: 450px !important;
+  max-height: 450px !important;
+  font-size: 14px;
+  .p-card-body {
+    .p-card-title {
+      font-size: 16px;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-delete {
+  background-color: indianred;
+}
+
+.button-edit {
+  background-color: dodgerblue;
+}

@@ -1,0 +1,31 @@
+<p-toast />
+<p-confirmDialog />
+<div class="flex flex-wrap items-center justify-center gap-4 m-10 p-10">
+  <div *ngFor="let item of paginatedPostList" class="">
+    <p-card [header]="item.title" [subheader]="item.userName" [style]="{ width: '360px' }">
+      <ng-template pTemplate="header">
+        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg"/>
+      </ng-template>
+      <p>
+        {{ item.body }}
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="flex justify-end">
+          <div class="button button-delete" (click)="deletePost($event,item.id)">
+            <i class="pi pi-trash"></i>
+          </div>
+          <div class="button button-edit" (click)="editPost(item.id)">
+            <i class="pi pi-pencil"></i>
+          </div>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+<div>
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [rows]="pageSize"
+    [totalRecords]="postList.length"
+    [rowsPerPageOptions]="[10, 20, 30]"/>
+</div>

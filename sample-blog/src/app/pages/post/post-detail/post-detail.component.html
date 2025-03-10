@@ -1,0 +1,42 @@
+@if (isEdit) {
+  <app-post-edit-form [post]="postDetail"></app-post-edit-form>
+} @else {
+  <div class="flex p-10">
+    <div class="flex-none mr-32">
+      <p-card [header]="postDetail.title" [subheader]="postDetail.userName" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+          <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg"/>
+        </ng-template>
+        <p>
+          {{ postDetail.body }}
+        </p>
+      </p-card>
+    </div>
+    <div class="grow">
+      <strong>Comments: </strong>
+      <div class="mt-10" *ngFor="let comment of postComments">
+        <p-card [style]="{ width: '100%' }">
+          <ng-template pTemplate="header">
+            <div class="flex items-center">
+              <div class="mr-3">
+                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle"/>
+              </div>
+              <div>
+                <strong class="text-base">{{ comment.name }}</strong>
+                <p class="text-base italic">{{ comment.email }}</p>
+              </div>
+
+            </div>
+
+          </ng-template>
+          <p>
+            {{ comment.body }}
+          </p>
+          <ng-template pTemplate="footer">
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
+}
+

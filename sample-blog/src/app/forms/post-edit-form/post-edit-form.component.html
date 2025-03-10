@@ -1,0 +1,26 @@
+<p-toast />
+<p-confirmDialog />
+<div class="sign-up-form">
+  <form [formGroup]="formGroup" class="w-full h-full p-5">
+    <div class="m-5 mb-12">
+      <p-floatLabel>
+        <input pInputText id="title" formControlName="title"/>
+        <label for="title">Title</label>
+      </p-floatLabel>
+    </div>
+    <div class="m-5 mb-2">
+      <p-floatLabel>
+        <textarea pInputTextarea id="body" formControlName="body"></textarea>
+        <label for="body">Body</label>
+      </p-floatLabel>
+    </div>
+    <div class="flex justify-center">
+      <div class="mt-2 mr-10 flex justify-center" (click)="cancel()">
+        <p-button severity="warning" size="large" [outlined]="true" [className]="'button-cancel'" label=Cancel></p-button>
+      </div>
+      <div class="mt-2 flex justify-center" (click)="submitForm($event)">
+        <p-button severity="warning" size="large" [outlined]="true" [className]="'button-submit'" label=Submit></p-button>
+      </div>
+    </div>
+  </form>
+</div>
