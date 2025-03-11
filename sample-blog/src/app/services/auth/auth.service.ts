@@ -15,6 +15,10 @@ export class AuthService {
   constructor() {
   }
 
+  isAuthenticated = () => {
+    return !!localStorage.getItem("userId");
+  }
+
   login = (username: string, password: string) => {
     if (username === 'admin' && password === 'admin') {
       localStorage.setItem('userId', '1');
