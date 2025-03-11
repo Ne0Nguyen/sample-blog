@@ -6,6 +6,10 @@ The UI library using in this project is `PrimeNG` with `TailwindCSS`
 
 The main code folder is the inside `sample-blog` folder
 
+To test update and delete post, please login with account `admin/admin`
+
+Since the server is not actually delete or update their real data, its API still fake response
+
 
 ## Development server
 Open Terminal
